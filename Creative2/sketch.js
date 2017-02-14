@@ -4,7 +4,7 @@
 
 var imageFeed; // to connect with camera
 var theta = 0; // start the angle at zero 
-var bgcolor; // define variable to change the background colors upon a mouseclick
+var bgcolor; // define variable to change the background colors upon a mouse click
 
 
 //Setup canvas as well as defining needed functions and variables. 
