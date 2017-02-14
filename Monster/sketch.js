@@ -9,6 +9,11 @@ var head_width = 300; // helps with creating the shape of the head
 var head_height = 300; // same as above 
 var jumpValue = 20; // same a
 var jumpDir = 1; // 
+var num = 2000;
+var range = 6;
+
+var ax = [];
+var ay = [];
 
 // setting up page where Pikachu jumps
 function setup() {
@@ -140,3 +145,31 @@ function feet(x,y) {
 function mousePressed() {
   (page = 1 - page); // calls either page after mouse press
   }
+  
+  function Drop() {
+  this.x = random(width);
+  this.y = random(-500, -50);
+  this.z = random(0, 20);
+  this.len = map(this.z, 0, 20, 10, 20);
+  this.yspeed = map(this.z, 0, 20, 1, 20);
+
+  this.fall = function() {
+    this.y = this.y + this.yspeed;
+    var grav = map(this.z, 0, 20, 0, 0.2);
+    this.yspeed = this.yspeed + grav;
+
+    if (this.y > height) {
+      this.y = random(-200, -100);
+      this.yspeed = map(this.z, 0, 20, 4, 10);
+    }
+  }
+
+  this.show = function() {
+    var thick = map(this.z, 0, 20, 1, 3);
+    strokeWeight(thick);
+    stroke(0, 61, 245);
+    line(this.x, this.y, this.x, this.y+this.len);
+  }
+}
+
+

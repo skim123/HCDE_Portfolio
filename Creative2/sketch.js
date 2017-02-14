@@ -24,9 +24,9 @@ function mousePressed () { // clicking the mouse allows for the colors to be cha
 // Create the cube projector
 function draw() {
   background(bgcolor); //define the background so that the colors can be changed
-	rotateZ(theta * 0.1); // determines movements of the z coordinate of the cube
-	rotateX(theta * 0.1); // determines movements of the x coordinate of the cube
-	rotateY(theta * 0.1); // determines movements of the y coordinate of the cube
+	rotateX(theta * 0.05); // determines movements of the z coordinate of the cube
+	rotateY(theta * 0.05); // determines movements of the x coordinate of the cube
+	rotateZ(theta * 0.05); // determines movements of the y coordinate of the cube
 	texture(imageFeed); // color the cube but with a twist: all six sides of the cube are adornred with the webcam feed
 	box(mouseX, mouseY, 400); // alternatively you don't need to define the object as a cube as calling it a box has the same effect. Also added in a little treat to change the dimensions of the cube based on mouse movement for added party fun times. 
 	theta += 0.05; // actually causes the cube to move in random directions, similar to how you can move an object by manipulating x and y coordinate in a 2d plane. 
